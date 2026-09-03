@@ -1,0 +1,1437 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* Navbar */
+
+.navbar{
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(15px);
+transition:.4s;
+}
+
+.navbar-brand{
+font-size:1.7rem;
+letter-spacing:2px;
+}
+
+.nav-link{
+margin-left:18px;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-link:hover{
+color:#ffc107!important;
+
+}
+
+/* =========================================
+   RESPONSIVE HERO — SENZO'S
+========================================= */
+
+.hero{
+    position:relative;
+    width:100%;
+    min-height:100svh;
+    height:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:120px 20px 80px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.82)
+        ),
+        url("assets/images/events/2.jpg") center center / cover no-repeat;
+
+    overflow:hidden;
+}
+
+/* Background glow */
+
+.hero::before{
+    content:"";
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:rgba(255,179,0,.12);
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    top:-200px;
+    right:-200px;
+
+    pointer-events:none;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:rgba(255,0,120,.08);
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    bottom:-200px;
+    left:-200px;
+
+    pointer-events:none;
+}
+
+
+/* Bootstrap container */
+
+.hero > .container{
+    position:relative;
+    z-index:5;
+
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+}
+
+
+/* Hero content */
+
+.hero-content{
+    position:relative;
+    z-index:10;
+
+    width:100%;
+    max-width:900px;
+
+    margin:0 auto;
+
+    text-align:center;
+}
+
+
+/* Small heading */
+
+.hero-content h5{
+
+    font-size:clamp(.7rem, 1.5vw, 1rem);
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* Main heading */
+
+.hero h1{
+
+    margin:0 auto;
+
+    max-width:900px;
+
+    font-size:clamp(
+        2.3rem,
+        6vw,
+        5rem
+    );
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    letter-spacing:-1px;
+
+    overflow-wrap:break-word;
+
+}
+
+
+/* Highlight */
+
+.hero h1 span{
+    color:#ffc107;
+}
+
+
+/* Description */
+
+.hero p{
+
+    max-width:680px;
+
+    margin:25px auto 0;
+
+    font-size:clamp(
+        .9rem,
+        2vw,
+        1.15rem
+    );
+
+    line-height:1.7;
+
+    color:#ddd;
+
+}
+
+
+/* Buttons */
+
+.hero .mt-5{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:35px !important;
+
+}
+
+.hero .mt-5 .btn{
+
+    width:auto;
+
+    min-width:170px;
+
+    margin:0;
+
+}
+
+
+/* Statistics */
+
+.hero-stats{
+
+    width:100%;
+
+    max-width:800px;
+
+    margin:55px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap:15px;
+
+}
+
+
+.hero-stats div{
+
+    min-width:0;
+
+    padding:18px 10px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border-radius:16px;
+
+}
+
+
+.hero-stats h2{
+
+    margin:0;
+
+    font-size:clamp(
+        1.2rem,
+        3vw,
+        2rem
+    );
+
+    color:#ffc107;
+
+}
+
+
+.hero-stats p{
+
+    margin:5px 0 0;
+
+    font-size:.75rem;
+
+    color:#bbb;
+
+}
+
+
+/* Scroll indicator */
+
+.scroll-down{
+
+    position:absolute;
+
+    z-index:10;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:1.4rem;
+
+    animation:bounce 1.5s infinite;
+
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media(max-width:992px){
+
+    .hero{
+
+        padding:
+            120px
+            25px
+            80px;
+
+    }
+
+    .hero-stats{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        max-width:500px;
+
+    }
+
+}
+
+
+/* =========================================
+   PHONES
+========================================= */
+
+@media(max-width:600px){
+
+    .hero{
+
+        min-height:100svh;
+
+        padding:
+            105px
+            18px
+            70px;
+
+        background-position:center center;
+
+    }
+
+
+    .hero-content h5{
+
+        letter-spacing:2px;
+
+        margin-bottom:15px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:
+            clamp(2rem, 11vw, 3rem);
+
+        line-height:1.08;
+
+    }
+
+
+    .hero p{
+
+        font-size:.9rem;
+
+        line-height:1.6;
+
+        margin-top:18px;
+
+    }
+
+
+    .hero .mt-5{
+
+        flex-direction:column;
+
+        width:100%;
+
+        margin-top:25px !important;
+
+    }
+
+
+    .hero .mt-5 .btn{
+
+        width:100%;
+
+        max-width:280px;
+
+        min-width:0;
+
+    }
+
+
+    .hero-stats{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+
+        margin-top:35px;
+
+    }
+
+
+    .hero-stats div{
+
+        padding:14px 8px;
+
+        border-radius:12px;
+
+    }
+
+
+    .hero-stats h2{
+
+        font-size:1.25rem;
+
+    }
+
+
+    .hero-stats p{
+
+        font-size:.65rem;
+
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media(max-width:380px){
+
+    .hero{
+
+        padding-top:95px;
+
+    }
+
+    .hero h1{
+
+        font-size:1.9rem;
+
+    }
+
+    .hero-stats{
+
+        gap:7px;
+
+    }
+
+    .hero-stats div{
+
+        padding:12px 5px;
+
+    }
+
+}
+
+
+/* =========================================
+   PHONE LANDSCAPE / DESKTOP MODE
+========================================= */
+
+/*
+   Some Android browsers use a desktop CSS
+   viewport even though the physical screen
+   remains small.
+*/
+
+@media(max-height:600px) and (orientation:landscape){
+
+    .hero{
+
+        min-height:auto;
+
+        padding:
+            100px
+            25px
+            60px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:
+            clamp(2rem, 6vw, 3.5rem);
+
+    }
+
+
+    .hero p{
+
+        max-width:600px;
+
+        margin-top:15px;
+
+    }
+
+
+    .hero .mt-5{
+
+        margin-top:20px !important;
+
+    }
+
+
+    .hero-stats{
+
+        margin-top:25px;
+
+    }
+
+
+    .scroll-down{
+
+        display:none;
+
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media(min-width:1200px){
+
+    .hero{
+
+        padding-left:40px;
+        padding-right:40px;
+
+    }
+
+    .hero-content{
+
+        max-width:1000px;
+
+    }
+
+}
+
+/*========================
+  General Sections
+========================*/
+
+section{
+    position:relative;
+}
+
+.section-dark{
+    background:#0b0b0b;
+}
+
+.text-warning{
+    color:#ffc107 !important;
+}
+
+/*========================
+  Glass Card
+========================*/
+
+.glass-box{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    transition:.35s;
+
+}
+
+.glass-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#ffc107;
+
+}
+
+/*========================
+  Feature Cards
+========================*/
+
+.feature-card{
+
+    background:#111;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    height:100%;
+
+    border:1px solid #1d1d1d;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    background:#171717;
+
+    border-color:#ffc107;
+
+}
+
+.feature-card i{
+
+    font-size:50px;
+
+    color:#ffc107;
+
+    margin-bottom:25px;
+
+}
+
+/*========================
+  Event Cards
+========================*/
+
+.event-card{
+
+    background:#101010;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    border:1px solid #202020;
+
+}
+
+.event-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#ffc107;
+
+    box-shadow:0 20px 45px rgba(255,193,7,.18);
+
+}
+
+/*========================
+  Drinks
+========================*/
+
+.drink{
+
+    background:#111;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.drink:hover{
+
+    background:#191919;
+
+    transform:scale(1.04);
+
+}
+
+.drink h5{
+
+    color:#ffc107;
+
+}
+
+/*========================
+  Gallery
+========================*/
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.gallery-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(0,0,0,.55);
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.12);
+
+}
+
+.gallery-item:hover .gallery-overlay{
+
+    opacity:1;
+
+}
+
+.gallery-overlay h5{
+
+    color:#fff;
+
+    letter-spacing:1px;
+
+}
+
+/*========================
+  VIP
+========================*/
+
+.vip-card{
+
+    background:#111;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    border:1px solid #222;
+
+    height:100%;
+
+}
+
+.vip-card:hover{
+
+    transform:translateY(-15px);
+
+    border-color:#ffc107;
+
+}
+
+.vip-card.featured{
+
+    border:2px solid #ffc107;
+
+    transform:scale(1.05);
+
+}
+
+.vip-card ul li{
+
+    margin:15px 0;
+
+}
+
+/*========================
+  DJ
+========================*/
+
+.dj-card{
+
+    background:#111;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.dj-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.dj-card img{
+
+    width:170px;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border:4px solid #ffc107;
+
+}
+
+/*========================
+ Testimonials
+========================*/
+
+.testimonial-card{
+
+    background:#111;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/*========================
+ Forms
+========================*/
+
+.form-control,
+.form-select{
+
+    background:#161616;
+
+    border:none;
+
+    color:#fff;
+
+    padding:15px;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    background:#161616;
+
+    color:#fff;
+
+    box-shadow:0 0 0 .2rem rgba(255,193,7,.25);
+
+}
+
+textarea{
+
+    resize:none;
+
+}
+
+/*========================
+ Accordion
+========================*/
+
+.accordion-item{
+
+    border:1px solid #222;
+
+    margin-bottom:15px;
+
+}
+
+.accordion-button{
+
+    font-weight:600;
+
+}
+
+.accordion-button:not(.collapsed){
+
+    background:#ffc107;
+
+    color:#000;
+
+}
+
+/*========================
+ Footer
+========================*/
+
+footer{
+
+    background:#050505;
+
+}
+
+footer a{
+
+    color:#aaa;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+footer a:hover{
+
+    color:#ffc107;
+
+}
+
+/*========================
+ Buttons
+========================*/
+
+.btn-warning{
+
+    transition:.3s;
+
+}
+
+.btn-warning:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(255,193,7,.3);
+
+}
+
+/*========================
+ Scrollbar
+========================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0b0b0b;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ffc107;
+
+    border-radius:20px;
+
+}
+
+/*========================
+ Animations
+========================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+section{
+
+    animation:fadeUp .9s ease;
+
+}
+
+/*========================
+ Mobile
+========================*/
+
+@media(max-width:992px){
+
+.hero{
+
+    text-align:center;
+    height:170vh;
+
+}
+
+.hero-stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.gallery-item img{
+
+    height:220px;
+
+}
+
+.vip-card.featured{
+
+    transform:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+    font-size:2.5rem;
+
+}
+
+.display-5{
+
+    font-size:2rem;
+
+}
+
+.feature-card,
+.event-card,
+.vip-card,
+.testimonial-card,
+.dj-card{
+
+    margin-bottom:20px;
+
+}
+
+.hero-stats{
+
+    grid-template-columns:1fr;
+
+}
+
+footer{
+
+    text-align:center;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero{
+
+    min-height:100vh;
+
+}
+
+.btn{
+
+    width:100%;
+
+    margin-bottom:15px;
+
+}
+
+.gallery-item img{
+
+    height:180px;
+
+}
+
+}
+
+/*================ EVENTS =================*/
+
+.event-card{
+    overflow:hidden;
+    padding:0;
+}
+
+.event-image{
+    height:270px;
+    position:relative;
+    overflow:hidden;
+}
+
+.event-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.event-card:hover .event-image img{
+    transform:scale(1.08);
+}
+
+.event-date{
+    position:absolute;
+    top:18px;
+    left:18px;
+    width:65px;
+    padding:8px;
+    text-align:center;
+    background:#ffc107;
+    color:#000;
+    border-radius:12px;
+    line-height:1;
+}
+
+.event-date span{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+}
+
+.event-date strong{
+    display:block;
+    font-size:25px;
+    margin:5px 0;
+}
+
+.event-date small{
+    font-size:10px;
+}
+
+.event-content{
+    padding:28px;
+}
+
+.event-category{
+    color:#ffc107;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.event-content h3{
+    margin-top:10px;
+}
+
+.event-info{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    font-size:12px;
+    color:#aaa;
+    margin:20px 0;
+}
+
+.event-info i{
+    color:#ffc107;
+    margin-right:5px;
+}
+
+
+/*================ PAST EVENTS =================*/
+
+.past-event-slide{
+    height:600px;
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+}
+
+.past-event-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.past-event-slide::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        transparent 35%,
+        rgba(0,0,0,.9)
+    );
+}
+
+.past-event-caption{
+    position:absolute;
+    z-index:2;
+    left:8%;
+    bottom:12%;
+    max-width:600px;
+}
+
+.past-event-caption span{
+    color:#ffc107;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.past-event-caption h2{
+    font-size:3rem;
+    font-weight:800;
+}
+
+.past-event-caption p{
+    color:#ddd;
+}
+
+.carousel-indicators{
+    bottom:20px;
+}
+
+
+/*================ DRINKS =================*/
+
+.drink-card{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    height:100%;
+    transition:.4s;
+    border:1px solid #222;
+}
+
+.drink-card:hover{
+    transform:translateY(-10px);
+    border-color:#ffc107;
+}
+
+.drink-image{
+    height:280px;
+    overflow:hidden;
+}
+
+.drink-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.drink-card:hover .drink-image img{
+    transform:scale(1.08);
+}
+
+.drink-content{
+    padding:25px;
+}
+
+.drink-content p{
+    color:#999;
+    font-size:14px;
+}
+
+.drink-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
+}
+
+.drink-bottom span{
+    color:#ffc107;
+    font-weight:700;
+}
+
+.drink-bottom i{
+    width:35px;
+    height:35px;
+    border:1px solid #ffc107;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#ffc107;
+}
+
+
+/*================ GALLERY =================*/
+
+.gallery-item{
+    cursor:pointer;
+    height:280px;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.gallery-overlay{
+    flex-direction:column;
+    gap:8px;
+}
+
+.gallery-overlay i{
+    font-size:25px;
+    color:#ffc107;
+}
+
+.gallery-overlay span{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+
+/*================ GALLERY MODAL =================*/
+
+.gallery-modal{
+    background:#050505;
+    border:none;
+    padding:10px;
+    position:relative;
+}
+
+.gallery-modal img{
+    width:100%;
+    max-height:85vh;
+    object-fit:contain;
+}
+
+.gallery-modal .btn-close{
+    position:absolute;
+    right:20px;
+    top:20px;
+    z-index:5;
+    background-color:#fff;
+    border-radius:50%;
+    padding:10px;
+}
+
+
+/*================ MOBILE =================*/
+
+@media(max-width:768px){
+
+    .past-event-slide{
+        height:450px;
+    }
+
+    .past-event-caption{
+        left:25px;
+        right:25px;
+        bottom:60px;
+    }
+
+    .past-event-caption h2{
+        font-size:2rem;
+    }
+
+    .event-image{
+        height:230px;
+    }
+
+    .drink-image{
+        height:250px;
+    }
+
+    .gallery-item{
+        height:220px;
+    }
+
+    .event-info{
+        flex-direction:column;
+    }
+
+}
